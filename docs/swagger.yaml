@@ -1,0 +1,361 @@
+info:
+  contact: {}
+paths:
+  /admin/createuser:
+    post:
+      consumes:
+      - application/json
+      description: create user
+      parameters:
+      - description: require id
+        in: body
+        name: id
+        required: true
+        schema:
+          type: integer
+      - description: require name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      - description: require password
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: create user
+  /admin/deletelist:
+    delete:
+      consumes:
+      - application/json
+      description: delete user todoList
+      parameters:
+      - description: require id
+        in: query
+        name: id
+        required: true
+        type: integer
+      - description: require user_id
+        in: query
+        name: user_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: delete user todoList
+  /admin/deleteuser:
+    delete:
+      consumes:
+      - application/json
+      description: delete user
+      parameters:
+      - description: require user_id
+        in: query
+        name: user_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: delete user
+  /admin/querybyadmin:
+    get:
+      description: query all user todoList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: query all user todoList
+  /admin/updatelist:
+    put:
+      consumes:
+      - application/json
+      description: update user todoList
+      parameters:
+      - description: require id
+        in: body
+        name: id
+        required: true
+        schema:
+          type: integer
+      - description: require tiele
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: require body
+        in: body
+        name: body
+        required: true
+        schema:
+          type: string
+      - description: require user_id
+        in: body
+        name: user_id
+        required: true
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: update user todoList
+  /admin/updateuser:
+    put:
+      consumes:
+      - application/json
+      description: update user password
+      parameters:
+      - description: require user_id
+        in: body
+        name: id
+        required: true
+        schema:
+          type: integer
+      - description: require password
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: update user password
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: user login
+      parameters:
+      - description: require id
+        in: query
+        name: id
+        required: true
+        type: integer
+      - description: require name
+        in: query
+        name: name
+        required: true
+        type: string
+      - description: require password
+        in: query
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: user login
+  /logout:
+    get:
+      description: user logout
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: user logout
+  /user/create:
+    post:
+      consumes:
+      - application/json
+      description: create user todoList
+      parameters:
+      - description: require id
+        in: body
+        name: id
+        required: true
+        schema:
+          type: integer
+      - description: require tiele
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: require body
+        in: body
+        name: body
+        required: true
+        schema:
+          type: string
+      - description: ' user_id'
+        in: body
+        name: user_id
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: create user todoList
+  /user/delete:
+    delete:
+      consumes:
+      - application/json
+      description: delete user todoList
+      parameters:
+      - description: require id
+        in: query
+        name: id
+        required: true
+        type: integer
+      - description: require tiele
+        in: query
+        name: title
+        type: string
+      - description: require body
+        in: query
+        name: body
+        type: string
+      - description: ' user_id'
+        in: query
+        name: user_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: delete user todoList
+  /user/querybyuser:
+    get:
+      consumes:
+      - application/json
+      description: query user todoList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: query user todoList
+  /user/update:
+    put:
+      consumes:
+      - application/json
+      description: update user todoList
+      parameters:
+      - description: require id
+        in: body
+        name: id
+        required: true
+        schema:
+          type: integer
+      - description: require tiele
+        in: body
+        name: title
+        required: true
+        schema:
+          type: string
+      - description: require body
+        in: body
+        name: body
+        required: true
+        schema:
+          type: string
+      - description: ' user_id'
+        in: body
+        name: user_id
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: update user todoList
+swagger: "2.0"
